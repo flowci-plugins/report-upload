@@ -24,16 +24,18 @@ steps:
     plugin: "gitclone"
     allow_failure: false
 
-  - name: npm install
-    docker: # optional, can be run from node:12 image
+  - name: gen-report
+    docker:
       image: node:12
     envs:
-      NPM_CMD: "npm install"
-    plugin: "npm-runner"
+      NPM_CMD: "nyc report --reporter=html"
+    plugin: 'npm-runner'
+
+  - name: upload
+    docker:
+      image: ubuntu:18.04
+    envs:
+      REPORT_PATH: "${FLOWCI_GIT_REPO}/coverage"
+      REPORT_NAME: "Code Coverage"
+    plugin: 'report-upload'
 ```
-
-## Screenshot
-
-### nyc test coverage report
-
-![](https://raw.githubusercontent.com/flowci-plugins/npm-runner/master/screenshot/report.png)
