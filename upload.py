@@ -11,8 +11,6 @@ EntryFile = client.GetVar('REPORT_ENTRY_FILE')
 
 def checkContentType(t):
     valid = {
-        domain.ContentTypeZip: 1,
-        domain.ContentTypeGZip: 1,
         domain.ContentTypeHtml: 1,
         domain.ContentTypeJson: 1,
         domain.ContentTypeXml: 1
