@@ -18,7 +18,7 @@ inputs:
 - name: REPORT_ENTRY_FILE
   type: string
   value: index.html
-  requird: false
+  required: false
 
 script: |
   plugindir=${FLOWCI_AGENT_PLUGIN_DIR}/report-upload
