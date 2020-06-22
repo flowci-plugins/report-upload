@@ -4,7 +4,7 @@ import shutil
 from flowci import domain, client
 
 # inputs of plugin
-ReportPath = client.GetVar('REPORT_PATH')
+ReportPath = os.path.join(domain.AgentJobDir, client.GetVar('REPORT_PATH'))
 ReportName = client.GetVar('REPORT_NAME')
 ReportContentType = client.GetVar('REPORT_CONTENT_TYPE')
 EntryFile = client.GetVar('REPORT_ENTRY_FILE')
