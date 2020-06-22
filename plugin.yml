@@ -1,0 +1,28 @@
+name: report-upload
+version: 1.0.0
+
+inputs:
+- name: REPORT_PATH
+  type: string
+  required: true
+
+- name: REPORT_NAME
+  type: string
+  required: true
+
+- name: REPORT_CONTENT_TYPE
+  type: string
+  value: html
+  required: false
+
+- name: REPORT_ENTRY_FILE
+  type: string
+  value: index.html
+  requird: false
+
+script: |
+  plugindir=${FLOWCI_AGENT_PLUGIN_DIR}/report-upload
+  
+  echo $REPORT_PATH
+
+  python3 ${plugindir}/upload.py
