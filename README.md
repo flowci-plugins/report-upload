@@ -17,7 +17,6 @@ Upload report for job
 envs:
   FLOWCI_GIT_URL: "https://github.com/hexojs/hexo.git"
   FLOWCI_GIT_BRANCH: "master"
-  FLOWCI_GIT_REPO: "hexo"
 
 steps:
   - name: clone
